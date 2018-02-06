@@ -7,7 +7,7 @@ const bot = new TeleBot({
 });
 
 bot.on('text', function (msg) {
-    console.log(`[text] ${ msg.chat.id } ${ msg.text } ${msg.from.first_name}`);
+    console.log(`[text] ${ msg.chat.id } ${ msg.text }`);
 });
 
 bot.on(['/start'], msg => {
@@ -62,9 +62,20 @@ bot.on('/today', msg => {
     let s = "Today schedule: \n";
     let w, curentDay = day.getDay();
     if (week.getWeek(day) % 2 == 0) w = 1; else w = 2;
-    if( curentDay >= 5 )
-        if (w == 1) w = 2; else w =1;
+    if (curentDay >= 5)
+        if (w == 1) w = 2; else w = 1;
     let schedule = firebase.getToday(curentDay, firebase.getGroup(msg.from.id), w);
+    return bot.sendMessage(msg.from.id, s + schedule);
+});
+
+bot.on('/all_week', msg => {
+    let day = new Date();
+    let s = "Week schedule: \n";
+    let w, curentDay = day.getDay();
+    if (week.getWeek(day) % 2 == 0) w = 1; else w = 2;
+    if (curentDay >= 5)
+        if (w == 1) w = 2; else w = 1;
+    let schedule = firebase.getWeek(firebase.getGroup(msg.from.id), w);
     return bot.sendMessage(msg.from.id, s + schedule);
 });
 

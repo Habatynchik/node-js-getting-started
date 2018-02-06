@@ -26,6 +26,21 @@ exports.getGroup = function (id) {
     return group;
 };
 
+exports.getWeek = function (group, week) {
+    let schedule = "";
+    for (let day = 1; day < 6; day++) {
+        schedule += "Day: " + day + " \n";
+        database.ref('/schedule/' + group + "/" + day).on('value', function (snapshot) {
+            snapshot.forEach(function (childSnapshot) {
+                if (childSnapshot.val().week == 0 || childSnapshot.val().week == week) {
+                    schedule += childSnapshot.val().name + "\n";
+                }
+            });
+            schedule += "\n";
+        });
+    }
+    return schedule;
+};
 
 exports.getToday = function (day, group, week) {
     let schedule = "";
@@ -36,6 +51,5 @@ exports.getToday = function (day, group, week) {
             }
         });
     });
-    console.log(schedule);
     return schedule;
 };
