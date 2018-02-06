@@ -1,4 +1,5 @@
 var firebase = require('./firebasecontroller');
+var week = require('./week');
 
 const TeleBot = require('telebot');
 const bot = new TeleBot({
@@ -59,16 +60,20 @@ bot.on('/group', msg => {
 bot.on('/today', msg => {
     let day = new Date();
     let s = "Today schedule: \n";
-
-    let schedule = firebase.getToday(day.getDay(), firebase.getGroup(msg.from.id));
+    let w, curentDay = day.getDay();
+    if (week.getWeek(day) % 2 == 0) w = 1; else w = 2;
+    if( curentDay >= 5 )
+        if (w == 1) w = 2; else w =1;
+    let schedule = firebase.getToday(curentDay, firebase.getGroup(msg.from.id), w);
     return bot.sendMessage(msg.from.id, s + schedule);
 });
 
 bot.on('/tomorrow', msg => {
     let day = new Date();
     let s = "Tomorrow schedule: \n";
-
-    let schedule = firebase.getToday(day.getDay() + 1, firebase.getGroup(msg.from.id));
+    let w;
+    if (week.getWeek(day) % 2 == 0) w = 1; else w = 2;
+    let schedule = firebase.getToday(day.getDay() + 1, firebase.getGroup(msg.from.id), w);
     return bot.sendMessage(msg.from.id, s + schedule);
 });
 

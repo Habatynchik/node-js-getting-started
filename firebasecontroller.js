@@ -27,12 +27,15 @@ exports.getGroup = function (id) {
 };
 
 
-exports.getToday = function (day, group) {
+exports.getToday = function (day, group, week) {
     let schedule = "";
     database.ref('/schedule/' + group + '/' + day).on('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
-            schedule += "|" + childSnapshot.val().time + "| " + childSnapshot.val().room + ". " + childSnapshot.val().teacher + "\n" + childSnapshot.val().name + "\n";
+            if (childSnapshot.val().week == 0 || childSnapshot.val().week == week) {
+                schedule += "|" + childSnapshot.val().time + "| " + childSnapshot.val().room + ". " + childSnapshot.val().teacher + "\n" + childSnapshot.val().name + "\n";
+            }
         });
     });
+    console.log(schedule);
     return schedule;
 };

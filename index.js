@@ -1,4 +1,4 @@
-var telegram = require('./telegram');
+var telegram = require('./telegram')
 
 const express = require('express')
 const path = require('path')
