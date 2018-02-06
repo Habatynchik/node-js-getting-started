@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfc5413d-1090-47fb-959d-750275b49a0d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/firebasecontroller.js" afterPath="$PROJECT_DIR$/firebasecontroller.js" />
-      <change beforePath="$PROJECT_DIR$/telegram.js" afterPath="$PROJECT_DIR$/telegram.js" />
-    </list>
+    <list default="true" id="bfc5413d-1090-47fb-959d-750275b49a0d" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -31,7 +27,7 @@
       <file leaf-file-name="telegram.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/telegram.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-119">
               <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
               <folding />
             </state>
@@ -199,7 +195,7 @@
       <updated>1517879035595</updated>
       <workItem from="1517879037767" duration="3533000" />
       <workItem from="1517917105297" duration="71000" />
-      <workItem from="1517925121725" duration="1799000" />
+      <workItem from="1517925121725" duration="1849000" />
     </task>
     <task id="LOCAL-00001" summary="fsd">
       <created>1517881744514</created>
@@ -208,11 +204,18 @@
       <option name="project" value="LOCAL" />
       <updated>1517881744514</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Version 0.2">
+      <created>1517927182266</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1517927182266</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5403000" />
+    <option name="totallyTimeSpent" value="5453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -245,7 +248,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fsd" />
-    <option name="LAST_COMMIT_MESSAGE" value="fsd" />
+    <MESSAGE value="Version 0.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -334,7 +338,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/telegram.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-119">
           <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
           <folding />
         </state>
