@@ -47,7 +47,7 @@ exports.getToday = function (day, group, week) {
     database.ref('/schedule/' + group + '/' + day).on('value', function (snapshot) {
         snapshot.forEach(function (childSnapshot) {
             if (childSnapshot.val().week == 0 || childSnapshot.val().week == week) {
-                schedule += "|" + childSnapshot.val().time + "| " + childSnapshot.val().room + ". " + childSnapshot.val().teacher + "\n" + childSnapshot.val().name + "\n";
+                schedule += ("|" + childSnapshot.val().time + "| " + childSnapshot.val().room + ". " + childSnapshot.val().teacher + "\n" + childSnapshot.val().name + "\n") || 'Anonymous';
             }
         });
     });
