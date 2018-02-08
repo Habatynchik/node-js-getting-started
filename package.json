@@ -14,7 +14,8 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "firebase": "^4.9.1",
-    "telebot": "^1.2.3"
+    "telebot": "^1.2.3",
+    "vue": "^2.5.13"
   },
   "devDependencies": {
     "request": "^2.81.0",

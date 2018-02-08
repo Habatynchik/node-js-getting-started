@@ -25,7 +25,7 @@ bot.on(['/start'], msg => {
     return bot.sendMessage(msg.from.id, text, {replyMarkup});
 });
 
-bot.on(['/back'], msg => {
+bot.on([/(⬅️\s)?Назад*/], msg => {
     let replyMarkup = bot.keyboard([
         ['/schedule'],
         ['/group', '/about']
@@ -37,7 +37,7 @@ bot.on(['/back'], msg => {
 bot.on('/schedule', msg => {
     let replyMarkup = bot.keyboard([
         ['/today', '/tomorrow'],
-        ['/all_week', '/back']
+        ['/all_week', '⬅️ Назад']
     ], {resize: true});
 
     return bot.sendMessage(msg.from.id, 'Your schedule', {replyMarkup});
