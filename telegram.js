@@ -79,6 +79,15 @@ bot.on('/all_week', msg => {
     return bot.sendMessage(msg.from.id, s + schedule);
 });
 
+bot.on('/about', msg => {
+
+    let text =
+        "Version 0.2.2\n" +
+        "Dev by students from KISIT\n" +
+        "❤️❤️❤️:\n" ;
+    return bot.sendMessage(msg.from.id, text);
+});
+
 bot.on('/tomorrow', msg => {
     let day = new Date();
     let s = "Tomorrow schedule: \n";
